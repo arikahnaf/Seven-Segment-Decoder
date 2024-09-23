@@ -8,33 +8,34 @@ module Lab2(in, out);
 	
 	// Boolean equations for each segment (a to g) of the seven-segment display
 	assign out[0] = (~in[0])&(~in[1])&(~in[2])&( in[3]) || (~in[0])&( in[1])&(~in[2])&(~in[3]) || 
-					( in[0])&(~in[1])&( in[2])&( in[3]) || ( in[0])&( in[1])&(~in[2])&( in[3]);
+			( in[0])&(~in[1])&( in[2])&( in[3]) || ( in[0])&( in[1])&(~in[2])&( in[3]);
 	assign out[1] = (~in[0])&( in[1])&(~in[2])&( in[3]) || (~in[0])&( in[1])&( in[2])&(~in[3]) || 
-					( in[0])&(~in[1])&( in[2])&( in[3]) || ( in[0])&( in[1])&(~in[2])&(~in[3]) || 
-					( in[0])&( in[1])&( in[2])&(~in[3]) || ( in[0])&( in[1])&( in[2])&( in[3]);
+			( in[0])&(~in[1])&( in[2])&( in[3]) || ( in[0])&( in[1])&(~in[2])&(~in[3]) || 
+			( in[0])&( in[1])&( in[2])&(~in[3]) || ( in[0])&( in[1])&( in[2])&( in[3]);
 	assign out[2] = (~in[0])&(~in[1])&( in[2])&(~in[3]) || ( in[0])&( in[1])&(~in[2])&(~in[3]) || 
-					( in[0])&( in[1])&( in[2])&(~in[3]) || ( in[0])&( in[1])&( in[2])&( in[3]);
+			( in[0])&( in[1])&( in[2])&(~in[3]) || ( in[0])&( in[1])&( in[2])&( in[3]);
 	assign out[3] = (~in[0])&(~in[1])&(~in[2])&( in[3]) || (~in[0])&( in[1])&(~in[2])&(~in[3]) || 
-					(~in[0])&( in[1])&( in[2])&( in[3]) || ( in[0])&(~in[1])&( in[2])&(~in[3]) || 
-					( in[0])&( in[1])&( in[2])&( in[3]);
+			(~in[0])&( in[1])&( in[2])&( in[3]) || ( in[0])&(~in[1])&( in[2])&(~in[3]) || 
+			( in[0])&( in[1])&( in[2])&( in[3]);
 	assign out[4] = (~in[0])&(~in[1])&(~in[2])&( in[3]) || (~in[0])&(~in[1])&( in[2])&( in[3]) || 
-					(~in[0])&( in[1])&(~in[2])&(~in[3]) || (~in[0])&( in[1])&(~in[2])&( in[3]) || 
-					(~in[0])&( in[1])&( in[2])&( in[3]) || ( in[0])&(~in[1])&(~in[2])&( in[3]);
+			(~in[0])&( in[1])&(~in[2])&(~in[3]) || (~in[0])&( in[1])&(~in[2])&( in[3]) || 
+			(~in[0])&( in[1])&( in[2])&( in[3]) || ( in[0])&(~in[1])&(~in[2])&( in[3]);
 	assign out[5] = (~in[0])&(~in[1])&(~in[2])&( in[3]) || (~in[0])&(~in[1])&( in[2])&(~in[3]) || 
-					(~in[0])&(~in[1])&( in[2])&( in[3]) || (~in[0])&( in[1])&( in[2])&( in[3]) || 
-					( in[0])&( in[1])&(~in[2])&( in[3]);
+			(~in[0])&(~in[1])&( in[2])&( in[3]) || (~in[0])&( in[1])&( in[2])&( in[3]) || 
+			( in[0])&( in[1])&(~in[2])&( in[3]);
 	
-	/*	assign out[6] = (~in[0])&(~in[1])&(~in[2])&(~in[3]) || (~in[0])&(~in[1])&(~in[2])&( in[3]) || 
-					    (~in[0])&( in[1])&( in[2])&( in[3]) || ( in[0])&( in[1])&(~in[2])&(~in[3]);
+	/*	
+ 		assign out[6] = (~in[0])&(~in[1])&(~in[2])&(~in[3]) || (~in[0])&(~in[1])&(~in[2])&( in[3]) || 
+				(~in[0])&( in[1])&( in[2])&( in[3]) || ( in[0])&( in[1])&(~in[2])&(~in[3]);
 
 		Let's reduce the function of LED out[6]
 
 		For LED out[6], in minterm form, the function is originally:
 					f = ~in[0]~in[1]~in[2]~in[3] + ~in[0]~in[1]~in[2]in[3] + 
-						~in[0]in[1]in[2])in[3] + in[0]in[1]~in[2]~in[3]
+					    ~in[0]in[1]in[2])in[3] + in[0]in[1]~in[2]~in[3]
 			Reduction process:
 					f = ~in[0]~in[1]~in[2]~in[3] + ~in[0]~in[1]~in[2]in[3] + 
-						~in[0]in[1]in[2])in[3] + in[0]in[1]~in[2]~in[3]
+					    ~in[0]in[1]in[2])in[3] + in[0]in[1]~in[2]~in[3]
 					  = ~in[0]~in[1]~in[2](~in[3]+in[3]) + ~in[0]in[1]in[2])in[3] + in[0]in[1]~in[2]~in[3]
 					  = ~in[0]~in[1]~in[2](1) + ~in[0]in[1]in[2])in[3] + in[0]in[1]~in[2]~in[3]					
 					  = ~in[0]~in[1]~in[2] + ~in[0]in[1]in[2])in[3] + in[0]in[1]~in[2]~in[3]						      
@@ -42,6 +43,6 @@ module Lab2(in, out);
 	
 	// Simplified form after minimization of Boolean equation
 	assign out[6] = (~in[0])&(~in[1])&(~in[2]) || (~in[0])&( in[1])&( in[2])&( in[3]) || 
-					( in[0])&( in[1])&(~in[2])&(~in[3]);
+			( in[0])&( in[1])&(~in[2])&(~in[3]);
 	
 endmodule
