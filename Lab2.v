@@ -31,14 +31,14 @@ module Lab2(in, out);
 		Let's reduce the function of LED out[6]
 
 		For LED out[6], in minterm form, the function is originally:
-					f = ~in[0]~in[1]~in[2]~in[3] + ~in[0]~in[1]~in[2]in[3] + 
-					    ~in[0]in[1]in[2])in[3] + in[0]in[1]~in[2]~in[3]
+				f = ~in[0]~in[1]~in[2]~in[3] + ~in[0]~in[1]~in[2]in[3] + 
+				    ~in[0]in[1]in[2])in[3] + in[0]in[1]~in[2]~in[3]
 			Reduction process:
-					f = ~in[0]~in[1]~in[2]~in[3] + ~in[0]~in[1]~in[2]in[3] + 
-					    ~in[0]in[1]in[2])in[3] + in[0]in[1]~in[2]~in[3]
-					  = ~in[0]~in[1]~in[2](~in[3]+in[3]) + ~in[0]in[1]in[2])in[3] + in[0]in[1]~in[2]~in[3]
-					  = ~in[0]~in[1]~in[2](1) + ~in[0]in[1]in[2])in[3] + in[0]in[1]~in[2]~in[3]					
-					  = ~in[0]~in[1]~in[2] + ~in[0]in[1]in[2])in[3] + in[0]in[1]~in[2]~in[3]						      
+				f = ~in[0]~in[1]~in[2]~in[3] + ~in[0]~in[1]~in[2]in[3] + 
+				    ~in[0]in[1]in[2])in[3] + in[0]in[1]~in[2]~in[3]
+				  = ~in[0]~in[1]~in[2](~in[3]+in[3]) + ~in[0]in[1]in[2])in[3] + in[0]in[1]~in[2]~in[3]
+				  = ~in[0]~in[1]~in[2](1) + ~in[0]in[1]in[2])in[3] + in[0]in[1]~in[2]~in[3]					
+			 	  = ~in[0]~in[1]~in[2] + ~in[0]in[1]in[2])in[3] + in[0]in[1]~in[2]~in[3]						      
 	*/
 	
 	// Simplified form after minimization of Boolean equation
