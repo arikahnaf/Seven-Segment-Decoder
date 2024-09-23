@@ -6,7 +6,7 @@ module Lab2(in, out);
 	// Output: 7-bit signal corresponding to the seven segments (a to g) of a display
 	output [6:0] out;
 	
-	// Boolean equations for each segment (a to g) of the seven-segment display
+	// Boolean functions for each segment (a to g) of the seven-segment display
 	assign out[0] = (~in[0])&(~in[1])&(~in[2])&( in[3]) || (~in[0])&( in[1])&(~in[2])&(~in[3]) || 
 			( in[0])&(~in[1])&( in[2])&( in[3]) || ( in[0])&( in[1])&(~in[2])&( in[3]);
 	assign out[1] = (~in[0])&( in[1])&(~in[2])&( in[3]) || (~in[0])&( in[1])&( in[2])&(~in[3]) || 
@@ -41,7 +41,7 @@ module Lab2(in, out);
 			 	  = ~in[0]~in[1]~in[2] + ~in[0]in[1]in[2])in[3] + in[0]in[1]~in[2]~in[3]						      
 	*/
 	
-	// Simplified form after minimization of Boolean equation
+	// Simplified form after minimization of boolean function
 	assign out[6] = (~in[0])&(~in[1])&(~in[2]) || (~in[0])&( in[1])&( in[2])&( in[3]) || 
 			( in[0])&( in[1])&(~in[2])&(~in[3]);
 	
