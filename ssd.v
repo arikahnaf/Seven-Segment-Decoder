@@ -1,4 +1,4 @@
-module Lab2(in, out);
+module ssd(in, out);
 	
 	// Input: 4-bit binary value to be decoded (representing hexadecimal digits 0 to F)
 	input  [3:0] in;
